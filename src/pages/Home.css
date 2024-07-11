@@ -1,0 +1,23 @@
+.an{
+    width: 350px;
+    height: 350px;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: auto;
+    margin-top: 20px;
+    
+}
+.ann{
+    background-color: blueviolet;
+}
+.nk{
+    display:grid;
+    grid-template-columns: repeat(4
+    ,auto);
+
+    gap: 8px;
+    background-color: blueviolet;
+}
