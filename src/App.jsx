@@ -24,7 +24,7 @@ function App() {
       <Navber/>
         <Routes>
           <Route path="/" element={<Home getCartItem={getCartItem}/>}/>
-          <Route path="/cart" element={<Carts/>}/>
+          <Route path="/cart" element={<Carts x={x}/>}/>
           <Route path="/single" element={<Single getCartItem={getCartItem}/>}/>
           <Route path="/*" element={<Not/>}/>
           

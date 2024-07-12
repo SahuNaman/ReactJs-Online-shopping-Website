@@ -1,10 +1,42 @@
 import React from 'react'
 
 const Carts = (props) => {
-  console.log(props.x)
+  let a = props.x
+  console.log(a)
+  // const []
   return (
     <div>
-      Carts
+    <div class="cartPage">
+          <table class="table text-center align-middle">
+            <thead>
+              <tr>
+                <th scope="col">Sno</th>
+                <th scope="col">Product</th>
+                <th scope="col">Title</th>
+                <th scope="col">Quanity</th>
+                <th scope="col">Price</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody >
+            {a.map((ele,index)=>{
+              return <tr>
+                <th scope="row">{index+1}</th>
+                <td><img src={ele.thumbnail} style={{height:"300px",width:"300px"}}/></td>
+                <td>{ele.title}</td>
+                <td><button className='btn btn-success' >+</button>1 <button className='btn btn-success'></button> </td> 
+                <td>{ele.price}</td>
+                <td><button className='btn btn-success'>Delete</button></td>
+
+              </tr>
+            })}
+            
+             
+            </tbody>
+          </table>
+
+      </div>
+
     </div>
   )
 }

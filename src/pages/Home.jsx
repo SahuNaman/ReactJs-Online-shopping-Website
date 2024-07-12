@@ -32,7 +32,7 @@ const Home = (props) => {
                <img className='bg-dark' src={ele.images} width={"200px"} height={"200px"}/>
                <p>price : {ele.price} $</p>
                <div><Link className='btn btn-success' state={ele} to="/single">View Product</Link>
-               <button className='btn btn-info ms-3'onClick={()=>handlecart(ele)} >Add To Carts</button></div>
+               <Link to="/cart" className='btn btn-info ms-3'onClick={()=>handlecart(ele)} >Add To Carts</Link></div>
         </div>
        
 

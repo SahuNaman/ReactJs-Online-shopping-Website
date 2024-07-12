@@ -10,8 +10,8 @@ const Navber = () => {
       </div>
 
       <ul className='b'>
-        <li>Home </li>
-        <li><Link>Fresh</Link></li>
+        <li><Link to="/">Home </Link></li>
+        <li><Link to="/cart">Carts</Link></li>
         <li><Link>Amazon miniTV</Link></li>
         <li><Link>Sell</Link></li>
         <li><Link>Amazon Pay</Link></li>
