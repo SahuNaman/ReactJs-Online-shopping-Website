@@ -2,9 +2,10 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 
 const Sing = (props) => {
-  const handlecarts= (ele)=>{
-    console.log(ele)
-    props. getCartItem(ele)
+  const handlecarts= (ans)=>{
+    console.log(ans)
+    let up = {...ans, quantity:1}
+    props. getCartItem(up)
   }
   let location =useLocation()
   console.log(location)

@@ -16,7 +16,12 @@ function App() {
   console.log(x)
   let getCartItem = (ans)=>{
     console.log(ans)
-    setX([...x,ans])
+    let existItems = x.find((ele)=>ele.id===ans.id)
+    console.log(existItems)
+    if(!existItems){
+      setX([...x,ans])
+
+    }
   }
   return (
     <div className="App">
@@ -24,7 +29,7 @@ function App() {
       <Navber/>
         <Routes>
           <Route path="/" element={<Home getCartItem={getCartItem}/>}/>
-          <Route path="/cart" element={<Carts x={x}/>}/>
+          <Route path="/cart" element={<Carts x={x} setcart={setX}/>}/>
           <Route path="/single" element={<Single getCartItem={getCartItem}/>}/>
           <Route path="/*" element={<Not/>}/>
           

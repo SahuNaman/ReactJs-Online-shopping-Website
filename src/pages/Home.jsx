@@ -5,13 +5,14 @@ import { Link } from 'react-router-dom'
 
 const Home = (props) => {
   
-  const handlecart=(ele)=>{
-    console.log(ele)
-    props.getCartItem(ele)
+  const handlecart=(ans)=>{
+    console.log(ans)
+    let updated = {...ans, quantity:1}
+    props.getCartItem(updated)
   }
     const [pro,setPro] = useState([])
   let getData = async ()=>{
-    let res = await fetch('https://dummyjson.com/products?limit=0&skip=0');
+    let res = await fetch('https://dummyjson.com/products/search?q=phone');
     let data = await res.json();
     console.log(data.products)
     setPro(data.products);
@@ -32,7 +33,7 @@ const Home = (props) => {
                <img className='bg-dark' src={ele.images} width={"200px"} height={"200px"}/>
                <p>price : {ele.price} $</p>
                <div><Link className='btn btn-success' state={ele} to="/single">View Product</Link>
-               <Link to="/cart" className='btn btn-info ms-3'onClick={()=>handlecart(ele)} >Add To Carts</Link></div>
+               <Link  className='btn btn-info ms-3'onClick={()=>handlecart(ele)} >Add To Carts</Link></div>
         </div>
        
 

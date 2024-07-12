@@ -4,6 +4,18 @@ const Carts = (props) => {
   let a = props.x
   console.log(a)
   // const []
+
+  const handle=(obj,i)=>{
+    console.log(obj)
+    console.log(i)
+    let udatedobj = {
+      ...obj,quantity:obj.quantity+1,
+      price:obj.price + (obj.price/obj.quantity)
+    }
+    let UpdATE = [...props.x]
+    UpdATE[i]=udatedobj
+    props.setcart(UpdATE)
+  }
   return (
     <div>
     <div class="cartPage">
@@ -24,7 +36,7 @@ const Carts = (props) => {
                 <th scope="row">{index+1}</th>
                 <td><img src={ele.thumbnail} style={{height:"300px",width:"300px"}}/></td>
                 <td>{ele.title}</td>
-                <td><button className='btn btn-success' >+</button>1 <button className='btn btn-success'></button> </td> 
+                <td><button className='btn btn-success' onClick={()=>handle(ele,index)}>+</button>{ele.quantity}<button className='btn btn-success'>-</button> </td> 
                 <td>{ele.price}</td>
                 <td><button className='btn btn-success'>Delete</button></td>
 
