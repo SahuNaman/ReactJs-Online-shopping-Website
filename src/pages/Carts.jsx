@@ -16,6 +16,22 @@ const Carts = (props) => {
     UpdATE[i]=udatedobj
     props.setcart(UpdATE)
   }
+  const handleDecre=(obj,i)=>{
+    console.log(obj)
+    console.log(i)
+    let udatedobj = {
+      ...obj, quantity:obj.quantity > 1?  obj.quantity-1 : obj.quantity,
+      price:obj.quantity > 1? obj.price - (obj.price/obj.quantity) :obj.price
+    }
+    let UpdATE = [...props.x]
+    UpdATE[i]=udatedobj
+    props.setcart(UpdATE)
+  }
+  const handDelete =(tree,i)=>{
+    let copyArr =[...props.x]
+    copyArr.splice(i,1);
+    props.setcart(copyArr)
+  }
   return (
     <div>
     <div class="cartPage">
@@ -36,9 +52,9 @@ const Carts = (props) => {
                 <th scope="row">{index+1}</th>
                 <td><img src={ele.thumbnail} style={{height:"300px",width:"300px"}}/></td>
                 <td>{ele.title}</td>
-                <td><button className='btn btn-success' onClick={()=>handle(ele,index)}>+</button>{ele.quantity}<button className='btn btn-success'>-</button> </td> 
-                <td>{ele.price}</td>
-                <td><button className='btn btn-success'>Delete</button></td>
+                <td><button className='btn btn-success' onClick={()=>handle(ele,index)}>+</button>{ele.quantity}<button className='btn btn-success' onClick={()=>handleDecre(ele,index)}>-</button> </td> 
+                <td>{Math.ceil(ele.price)}</td>
+                <td><button className='btn btn-success' onClick={()=>handDelete(ele,index)}>Delete</button></td>
 
               </tr>
             })}

@@ -30,7 +30,7 @@ const Home = (props) => {
    
       {pro.map((ele)=>{
         return <div className='an card'><h4 className='text-truncate'>{ele.title } </h4>
-               <img className='bg-dark' src={ele.images} width={"200px"} height={"200px"}/>
+               <img className='bg-dark' src={ele.images} width={"300px"} height={"200px"}/>
                <p>price : {ele.price} $</p>
                <div><Link className='btn btn-success' state={ele} to="/single">View Product</Link>
                <Link  className='btn btn-info ms-3'onClick={()=>handlecart(ele)} >Add To Carts</Link></div>
