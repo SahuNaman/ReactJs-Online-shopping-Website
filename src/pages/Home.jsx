@@ -12,7 +12,7 @@ const Home = (props) => {
   }
     const [pro,setPro] = useState([])
   let getData = async ()=>{
-    let res = await fetch('https://dummyjson.com/products/search?q=phone');
+    let res = await fetch('https://dummyjson.com/products/search?q=ipad');
     let data = await res.json();
     console.log(data.products)
     setPro(data.products);
